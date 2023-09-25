@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   My_Awesome_PhoneBook.hpp                           :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 17:42:59 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/08/09 09:17:31 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/09/25 10:22:08 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/09/25 12:59:50 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef  MY_AWESOME_PHONEBOOK_H
-#define  MY_AWESOME_PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-class contact
+#include   <iostream>
+#include "contact.hpp"
+
+class phonebook
 {
-    public
-    
-}
+    private:
+        contact  contacts[8];
+        int index;
+    public:
+        void add_contact(std::string name, std::string lname,
+            std::string Nname, std::string Pnumber,
+            std::string dScret);
+        void search_display_contact();
+        void display_contacts();
+};
 
 #endif
