@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 10:22:08 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/09/26 12:01:32 by hamza            ###   ########.fr       */
+/*   Created: 2023/09/26 14:03:13 by hamza             #+#    #+#             */
+/*   Updated: 2023/09/26 14:04:59 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef ZOMBIE_HPP
+#define ZOMBIE__HPP
 
-#include   <iostream>
-#include "contact.hpp"
-
-class phonebook
+class Zombie
 {
     private:
-        contact	contacts[8];
-        int		index;
-    public:
-        void    setIndex();
-        int     getIndex();
-        void    addContact();
-        void	displayContacts(phonebook pb);
-};
-
+    std::string name
+}
 #endif

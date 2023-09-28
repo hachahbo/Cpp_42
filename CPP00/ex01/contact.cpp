@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:17:23 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/09/25 12:36:55 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/09/26 12:02:45 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contac.hpp"
+#include "contact.hpp"
 
+ // -------------- setters ------------ //
+ 
 void contact::setFisrtName(std::string fname)
 {
     fristName = fname;
@@ -29,11 +31,17 @@ void contact::setPhoneNumbe(std::string Phnumber)
 {
     phoneNmuber = Phnumber;
 }
-void contact::setDark_secret(std::string Dscret)
+void contact::setDarkSecret(std::string Dscret)
 {
-    dark_secret = Dscret;
+    darkSecret = Dscret;
 }
 
+void contact::setnumber(int x)
+{
+    number = x;
+}
+
+// ----------- getters ------------ //
 std::string contact::getFristName()
         {
     return (fristName);
@@ -50,7 +58,18 @@ std::string contact::getPhoneNumber()
 {
     return (phoneNmuber);
 }
-std::string contact::getDark_secret()
+std::string contact::getDarkSecret()
 {
-    return (dark_secret);
+    return (darkSecret);
+}
+int contact::getnumber()
+{
+    return (number);
+}
+
+int contact::isFalse(contact con)
+{
+	if (con.fristName.empty())
+        return (1);
+    return (0);
 }

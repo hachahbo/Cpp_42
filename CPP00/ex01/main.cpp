@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:41:53 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/09/25 14:04:02 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/09/26 11:41:29 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,22 @@ int main()
     phonebook Pbook;
     std::string input;
 
+    Pbook.setIndex(); 
     while(input != "EXIT")
     {
         std::cout << "enter a command : ";
-        getline(std::cin, input);
+        if(!getline(std::cin, input))
+        {
+            std::cin.clear();
+            clearerr(stdin);
+            std::cout << std::endl;
+        }
         
         if(input == "ADD")
         {   
-            Pbook.add_contact();
-        } 
+            Pbook.addContact();
+        }
+        else if(input == "SEARCH")
+            Pbook.displayContacts(Pbook);
     }
 }
