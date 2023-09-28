@@ -6,12 +6,31 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:47:46 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/09/26 12:16:19 by hamza            ###   ########.fr       */
+/*   Updated: 2023/09/28 16:45:32 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 #include <iostream>
+#include <string>
+
+
+
+int checkStr(std::string str)
+{
+    unsigned long i;
+    char c;
+
+    i = 0;
+    while (i < str.length())
+    {
+        c = str[i];
+        if(!(std::isdigit(c)))
+            return (0);
+        i++;
+    }
+    return (1);
+}
 
 void phonebook::addContact()
 {
@@ -19,32 +38,71 @@ void phonebook::addContact()
    
     str = "";
     std::cout << "enter the name :";
-    getline(std::cin, str);
+    if(!getline(std::cin, str))
+    {
+        std::cin.clear();
+        clearerr(stdin);
+        std::cout << std::endl;
+    }
     contacts[this->index % 8].setFisrtName(str);
     
     str = "";
     std::cout << "enter " << contacts[this->index % 8].getFristName() << "'s last name :";
-    getline(std::cin, str);
+   if(!getline(std::cin, str))
+    {
+        std::cin.clear();
+        clearerr(stdin);
+        std::cout << std::endl;
+    }
     contacts[this->index % 8].setlastName(str);
     
     str = "";
     std::cout << "enter " << contacts[this->index % 8].getFristName() << "'s Nickname :";
-    getline(std::cin, str);
+   if(!getline(std::cin, str))
+    {
+        std::cin.clear();
+        clearerr(stdin);
+        std::cout << std::endl;
+    }
     contacts[this->index % 8].setNickName(str);
     
     str = "";
     std::cout << "enter " << contacts[this->index % 8].getFristName() << "'s phone number :";
-    getline(std::cin, str);
+   if(!getline(std::cin, str))
+    {
+        std::cin.clear();
+        clearerr(stdin);
+        std::cout << std::endl;
+    }
+    if(!checkStr(str))
+    {
+        while(!checkStr(str))
+        {
+            std::cout << "pleas enter " << contacts[this->index % 8].getFristName() << "'s phone number :";
+            if(!getline(std::cin, str))
+            {
+                std::cin.clear();
+                clearerr(stdin);
+                std::cout << std::endl;
+            }
+        }
+    }
     contacts[this->index % 8].setPhoneNumbe(str);
     
     str = "";
     std::cout << "enter " << contacts[this->index % 8].getFristName() << "'s darkest secret:";
-    getline(std::cin, str);
+   if(!getline(std::cin, str))
+    {
+        std::cin.clear();
+        clearerr(stdin);
+        std::cout << std::endl;
+    }
     contacts[this->index % 8].setDarkSecret(str);
     index++;
     contacts[index - 1].setnumber(index);
     std::cout << "the new contact has been added successfully !" << std::endl;
 }
+
 void contact::printInfo(contact con, int i)
 {
     if( i == 1)
@@ -91,6 +149,7 @@ void phonebook::displayContacts(phonebook pb)
 {
     int i;
     int x;
+    std::string str;
     (void)pb;
     i = 0;
     std::cout << std::endl;
@@ -110,8 +169,15 @@ void phonebook::displayContacts(phonebook pb)
         i++;
     }
     std::cout << "enter the index for Requesting contact information (press 0 if you want to skip) :";
-    std::cin >> x;
+    if(!getline(std::cin, str))
+    {
+        std::cin.clear();
+        clearerr(stdin);
+        std::cout << std::endl;
+    }
     i = 0;
+    const char* charStr = str.c_str();
+    x = std::atoi(charStr);
     if(x)
     {    while(i < 8)
         {

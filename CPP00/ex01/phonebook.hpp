@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:22:08 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/09/26 12:01:32 by hamza            ###   ########.fr       */
+/*   Updated: 2023/09/28 12:15:45 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ class phonebook
         void    addContact();
         void	displayContacts(phonebook pb);
 };
-
 #endif
