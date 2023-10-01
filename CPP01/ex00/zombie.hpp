@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 14:03:13 by hamza             #+#    #+#             */
-/*   Updated: 2023/09/26 14:04:59 by hamza            ###   ########.fr       */
+/*   Updated: 2023/09/28 12:04:18 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 class Zombie
 {
     private:
-    std::string name
+    std::string name;
 }
 #endif

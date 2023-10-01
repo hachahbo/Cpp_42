@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:41:53 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/09/26 11:41:29 by hamza            ###   ########.fr       */
+/*   Updated: 2023/09/29 16:29:40 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
     std::string input;
 
     Pbook.setIndex(); 
-    while(input != "EXIT")
+    while(7)
     {
         std::cout << "enter a command : ";
         if(!getline(std::cin, input))
@@ -35,5 +35,9 @@ int main()
         }
         else if(input == "SEARCH")
             Pbook.displayContacts(Pbook);
+        else if(input == "EXIT")
+            exit(0);
+        else
+            std::cout << "command not found try again !" << std::endl; 
     }
 }

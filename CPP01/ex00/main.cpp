@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 14:02:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/09/27 18:41:26 by hamza            ###   ########.fr       */
+/*   Updated: 2023/09/28 17:03:55 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,10 @@ void    Zombie::anounce(void)
 {
     std::cout << name << " : BraiiiiiiinnnzzzZ..." << std::endl;
 }
-void f()
-{
-    system("leaks a.out");
-}
+
 int main()
 {
     Zombie * newz = new Zombie();
-    atexit(f);
     newz->anounce();
     delete newz;
 }

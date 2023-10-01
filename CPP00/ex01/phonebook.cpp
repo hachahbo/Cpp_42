@@ -6,15 +6,13 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:47:46 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/09/28 16:45:32 by hamza            ###   ########.fr       */
+/*   Updated: 2023/10/01 10:31:44 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 #include <iostream>
 #include <string>
-
-
 
 int checkStr(std::string str)
 {
@@ -32,6 +30,38 @@ int checkStr(std::string str)
     return (1);
 }
 
+int checkName(std::string str)
+{
+    unsigned long i;
+    char c;
+
+    i = 0;
+    while (i < str.length())
+    {
+        c = str[i];
+        if(!(std::isalpha(c)))
+            return (0);
+        i++;
+    }   
+    return (1);
+}
+int checkLastName(std::string str)
+{
+    unsigned long i;
+    char c;
+
+    i = 0;
+    while (i < str.length())
+    {
+        c = str[i];
+        if(std::isalpha(c) || std::isspace(c))
+            i++;
+        else
+            return(0);
+    }   
+    return (1);
+}
+
 void phonebook::addContact()
 {
     std::string str;
@@ -44,6 +74,22 @@ void phonebook::addContact()
         clearerr(stdin);
         std::cout << std::endl;
     }
+     if(!checkName(str) || str.empty())
+    {
+        if(str.empty())
+            return ;
+        while(!checkName(str))
+        {
+            std::cout << "wrong input !!!" << std::endl;
+            std::cout << "pleas enter a correct first name : ";
+            if(!getline(std::cin, str))
+            {
+                std::cin.clear();
+                clearerr(stdin);
+                std::cout << std::endl;
+            }
+        }
+    }
     contacts[this->index % 8].setFisrtName(str);
     
     str = "";
@@ -53,6 +99,22 @@ void phonebook::addContact()
         std::cin.clear();
         clearerr(stdin);
         std::cout << std::endl;
+    }
+    if(!checkLastName(str) || str.empty())
+    {
+        if(str.empty())
+            return ;
+        while(!checkLastName(str))
+        {
+            std::cout << "wrong input !!!" << std::endl;
+            std::cout << "pleas enter a correct last name : ";
+            if(!getline(std::cin, str))
+            {
+                std::cin.clear();
+                clearerr(stdin);
+                std::cout << std::endl;
+            }
+        }
     }
     contacts[this->index % 8].setlastName(str);
     
@@ -74,10 +136,13 @@ void phonebook::addContact()
         clearerr(stdin);
         std::cout << std::endl;
     }
-    if(!checkStr(str))
+    if(!checkStr(str) || str.empty())
     {
+        if(str.empty())
+            return ;
         while(!checkStr(str))
         {
+            std::cout << "wrong input !!!" << std::endl;
             std::cout << "pleas enter " << contacts[this->index % 8].getFristName() << "'s phone number :";
             if(!getline(std::cin, str))
             {
@@ -97,6 +162,8 @@ void phonebook::addContact()
         clearerr(stdin);
         std::cout << std::endl;
     }
+    if(str.empty())
+        return ;
     contacts[this->index % 8].setDarkSecret(str);
     index++;
     contacts[index - 1].setnumber(index);
@@ -153,33 +220,52 @@ void phonebook::displayContacts(phonebook pb)
     (void)pb;
     i = 0;
     std::cout << std::endl;
-    std::cout << "|----------|----------|----------|----------|" << std::endl;
+    std::cout << "|-------------------------------------------|"<< std::endl;
 	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
     while(i < 8)
     {
-        if(pb.contacts[i].isFalse(pb.contacts[i]))
-            break;
         std::cout << "|" << std::setw(10) << i + 1 << "|";
         contacts[i].printInfo(contacts[i], 1);
         contacts[i].printInfo(contacts[i], 2);
         contacts[i].printInfo(contacts[i], 3);
         std::cout << std::endl;
-        std::cout << "|-------------------------------------------|"<< std::endl << std::endl;
+        if(pb.contacts[i + 1].isFalse(pb.contacts[i + 1]))
+            break;
+	        std::cout << "|----------|----------|----------|----------|" << std::endl;
         i++;
     }
-    std::cout << "enter the index for Requesting contact information (press 0 if you want to skip) :";
+    std::cout << "|___________________________________________|"<< std::endl;
+    std::cout << std::endl;
+    std::cout << "enter the index for Requesting contact information (press enter or 0 if you want to skip) :";
     if(!getline(std::cin, str))
     {
         std::cin.clear();
         clearerr(stdin);
         std::cout << std::endl;
     }
-    i = 0;
+    unsigned long l = 0;
+    char c;
+    while(l < str.size())
+    {
+        c = str[l];
+        if(!(std::isdigit(c)))
+        {
+            std::cout << "wrong input !!!" << std::endl;
+            if(index == 1)
+                std::cout << "there is only one contact (index 1) .\n";
+            else
+                std::cout << "pleas next time enter the index between (1 && " << index << ") \n";
+            return ;
+        }
+        l++;
+    }
     const char* charStr = str.c_str();
     x = std::atoi(charStr);
-    if(x)
-    {    while(i < 8)
+    i = 0;
+    if(x >= 1 && x <= index)
+    {    
+        while(i < 8)
         {
             if(contacts[i].getnumber() == x)
             {
@@ -189,4 +275,17 @@ void phonebook::displayContacts(phonebook pb)
             i++;
         }
     }
+    else if(x == 0)
+        return ;
+    else if(!(x < 1 && x > index + 1))
+    {
+        if(str.empty())
+            return ;
+        std::cout << "wrong input !!!" << std::endl;
+        if(index == 1)
+            std::cout << "there is only one contact (index 1) .\n";
+        else
+            std::cout << "pleas next time enter the index between (1 && " << index << ") \n";
+    }
+        
 }
