@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 14:02:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/01 15:49:52 by hamza            ###   ########.fr       */
+/*   Created: 2023/10/01 14:55:15 by hamza             #+#    #+#             */
+/*   Updated: 2023/10/01 14:55:43 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+void    Zombie::anounce(void)
 {
-    Zombie * newz = new Zombie();
-    newz->anounce();
-    delete newz;
+    std::cout << name << " : BraiiiiiiinnnzzzZ..." << std::endl;
 }

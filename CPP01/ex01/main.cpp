@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 14:02:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/01 15:49:52 by hamza            ###   ########.fr       */
+/*   Created: 2023/10/01 15:52:37 by hamza             #+#    #+#             */
+/*   Updated: 2023/10/03 15:27:20 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 int main()
 {
-    Zombie * newz = new Zombie();
-    newz->anounce();
-    delete newz;
+    int n = 10;
+    Zombie  *zombie = zombieHorde(n, "hamza");
+    int i = 0;
+    while(i < n)
+    {
+        zombie[i].anounce();
+        std::cout << std::endl;
+        i++;
+    }
+    delete  [] zombie;
 }

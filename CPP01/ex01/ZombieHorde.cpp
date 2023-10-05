@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 14:02:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/01 15:49:52 by hamza            ###   ########.fr       */
+/*   Created: 2023/10/03 15:23:46 by hamza             #+#    #+#             */
+/*   Updated: 2023/10/03 15:24:05 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+Zombie* zombieHorde( int N, std::string name)
 {
-    Zombie * newz = new Zombie();
-    newz->anounce();
-    delete newz;
+    int i= 0;
+    Zombie *zombieH  = new Zombie[N];
+    while(i < N)
+    {
+        zombieH[i].setName(name);
+        i++;
+    }
+    return (zombieH);
 }

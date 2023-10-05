@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 14:02:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/01 15:49:52 by hamza            ###   ########.fr       */
+/*   Created: 2023/10/03 15:21:13 by hamza             #+#    #+#             */
+/*   Updated: 2023/10/03 15:26:41 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-int main()
+#include <iostream>
+
+class Zombie
 {
-    Zombie * newz = new Zombie();
-    newz->anounce();
-    delete newz;
-}
+    private:
+        std::string name;
+    public:
+        Zombie()
+        {
+            this->name = "default";
+        }
+        void setName(std::string name);
+        void anounce();
+};
+
+Zombie* zombieHorde( int N, std::string name);
+
+#endif

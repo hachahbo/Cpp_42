@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 14:02:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/01 15:49:52 by hamza            ###   ########.fr       */
+/*   Created: 2023/10/01 14:54:22 by hamza             #+#    #+#             */
+/*   Updated: 2023/10/01 14:54:31 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+Zombie* newZombie( std::string name )
 {
-    Zombie * newz = new Zombie();
-    newz->anounce();
-    delete newz;
+    return (new Zombie(name));
 }

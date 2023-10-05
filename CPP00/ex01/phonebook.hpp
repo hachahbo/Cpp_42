@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:22:08 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/09/28 12:15:45 by hamza            ###   ########.fr       */
+/*   Updated: 2023/10/04 10:44:55 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PHONEBOOK_HPP
 
 #include   <iostream>
+#include    <string>
 #include "contact.hpp"
 
 class phonebook
