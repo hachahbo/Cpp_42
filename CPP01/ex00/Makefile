@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hamza <hamza@student.42.fr>                +#+  +:+       +#+         #
+#    By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 14:56:34 by hamza             #+#    #+#              #
-#    Updated: 2023/10/01 14:58:55 by hamza            ###   ########.fr        #
+#    Updated: 2023/10/06 11:26:47 by hachahbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC =  main.cpp	newZombie.cpp \
 	randomChump.cpp Zombie.cpp 
 		
 
-OBJS = $(SRC:.c=.o)
+OBJS = $(SRC:.cpp=.o)
 
 all : $(NAME)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:47:46 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/01 10:31:44 by hamza            ###   ########.fr       */
+/*   Updated: 2023/10/05 14:07:00 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int checkName(std::string str)
     }   
     return (1);
 }
+
 int checkLastName(std::string str)
 {
     unsigned long i;
@@ -74,11 +75,9 @@ void phonebook::addContact()
         clearerr(stdin);
         std::cout << std::endl;
     }
-     if(!checkName(str) || str.empty())
+     if( str.empty() || !checkName(str))
     {
-        if(str.empty())
-            return ;
-        while(!checkName(str))
+        while(!checkName(str) || str.empty())
         {
             std::cout << "wrong input !!!" << std::endl;
             std::cout << "pleas enter a correct first name : ";
@@ -102,9 +101,7 @@ void phonebook::addContact()
     }
     if(!checkLastName(str) || str.empty())
     {
-        if(str.empty())
-            return ;
-        while(!checkLastName(str))
+        while(!checkLastName(str)|| str.empty())
         {
             std::cout << "wrong input !!!" << std::endl;
             std::cout << "pleas enter a correct last name : ";
@@ -126,6 +123,18 @@ void phonebook::addContact()
         clearerr(stdin);
         std::cout << std::endl;
     }
+    while(str.empty())
+    {
+        std::cout << "wrong input !!!" << std::endl;
+        std::cout << "pleas enter a correct Nickname name : ";
+        if(!getline(std::cin, str))
+        {
+            std::cin.clear();
+            clearerr(stdin);
+            std::cout << std::endl;
+        }
+    }
+
     contacts[this->index % 8].setNickName(str);
     
     str = "";
@@ -136,20 +145,15 @@ void phonebook::addContact()
         clearerr(stdin);
         std::cout << std::endl;
     }
-    if(!checkStr(str) || str.empty())
+    while(!checkStr(str) || str.empty())
     {
-        if(str.empty())
-            return ;
-        while(!checkStr(str))
+        std::cout << "wrong input !!!" << std::endl;
+        std::cout << "pleas enter " << contacts[this->index % 8].getFristName() << "'s phone number :";
+        if(!getline(std::cin, str))
         {
-            std::cout << "wrong input !!!" << std::endl;
-            std::cout << "pleas enter " << contacts[this->index % 8].getFristName() << "'s phone number :";
-            if(!getline(std::cin, str))
-            {
-                std::cin.clear();
-                clearerr(stdin);
-                std::cout << std::endl;
-            }
+            std::cin.clear();
+            clearerr(stdin);
+            std::cout << std::endl;
         }
     }
     contacts[this->index % 8].setPhoneNumbe(str);
@@ -162,8 +166,17 @@ void phonebook::addContact()
         clearerr(stdin);
         std::cout << std::endl;
     }
-    if(str.empty())
-        return ;
+    while(str.empty())
+    {
+        std::cout << "wrong input !!!" << std::endl;
+        std::cout << "pleas enter " << contacts[this->index % 8].getFristName() << "'s phone number :";
+        if(!getline(std::cin, str))
+        {
+            std::cin.clear();
+            clearerr(stdin);
+            std::cout << std::endl;
+        }
+    }
     contacts[this->index % 8].setDarkSecret(str);
     index++;
     contacts[index - 1].setnumber(index);
@@ -212,6 +225,7 @@ void printMoreInfos(contact con)
     std::cout << "Phone number      : " << con.getPhoneNumber() << std::endl;
     std::cout << "Darkeset secret   : " << con.getDarkSecret() << std::endl;
 }
+
 void phonebook::displayContacts(phonebook pb)
 {
     int i;

@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:21:19 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/08/09 11:04:17 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:19:42 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ int main(int argc, char *argv[])
 		std::cout << argv[i];
 		i++;
 	}
-	std::cout << "\n";
+	std::cout << std::endl;
 	return (0);
 }

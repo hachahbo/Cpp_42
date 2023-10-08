@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hamza <hamza@student.42.fr>                +#+  +:+       +#+         #
+#    By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 15:29:08 by hamza             #+#    #+#              #
-#    Updated: 2023/10/03 15:29:52 by hamza            ###   ########.fr        #
+#    Updated: 2023/10/06 11:26:55 by hachahbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC =  main.cpp	Zombie.cpp \
 	Zombiehorde.cpp 
 		
 
-OBJS = $(SRC:.c=.o)
+OBJS = $(SRC:.cpp=.o)
 
 all : $(NAME)
 

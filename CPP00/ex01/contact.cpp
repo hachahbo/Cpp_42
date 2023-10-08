@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:17:23 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/03 15:25:33 by hamza            ###   ########.fr       */
+/*   Updated: 2023/10/05 11:22:06 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 
- // -------------- setters ------------ //
+// -------------- setters ------------ //
  
 void contact::setFisrtName(std::string fname)
 {
