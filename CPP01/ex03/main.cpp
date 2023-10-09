@@ -5,49 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 10:13:24 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/07 11:35:26 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/08 12:58:21 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/08 12:58:39 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
-class Weapon
-{
-    private:
-        std::string type;
-    public:
-        Weapon(std::string type);
-        void setType(std::string type);
-        const std::string& getType();
-};
-
-class HumanA
-{
-    private:
-        std::string name;
-        Weapon &WeponX;
-    public:
-        HumanA(std::string name, Weapon &WeponX);
-        void attack();
-        void setWeapon(Weapon Weapon);
-};
-
-
-class HumanB
-{
-    private:
-        std::string name;
-        Weapon &WeponX;
-    public:
-        HumanB(std::string name);
-        void setWeapon(Weapon Weapon);
-        void attack();
-        
-};
-
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
-    
-}`
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+    return 0;
+}

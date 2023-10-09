@@ -5,22 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/03 15:29:08 by hamza             #+#    #+#              #
-#    Updated: 2023/10/09 14:18:39 by hachahbo         ###   ########.fr        #
+#    Created: 2023/10/07 21:47:30 by hamza             #+#    #+#              #
+#    Updated: 2023/10/09 14:26:10 by hachahbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
 
-SRC =  main.cpp	Zombie.cpp \
-	ZombieHorde.cpp 
+NAME = main
+
+SRC =  main.cpp
 		
 
-OBJS = $(SRC:.cpp=.o)
+OBJS = $(SRC:.c=.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJS) 
+$(NAME) : $(OBJS)
 	c++ -std=c++98 -Wall -Wextra -Werror $(OBJS) -o $(NAME)
 
 clean:

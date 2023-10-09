@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 14:03:13 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/01 14:59:51 by hamza            ###   ########.fr       */
+/*   Updated: 2023/10/09 14:49:50 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,6 @@ class Zombie
         };
         void anounce(void);
 };
+    void randomChump( std::string name );
+    Zombie* newZombie( std::string name );
 #endif

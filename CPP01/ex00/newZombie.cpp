@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:54:22 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/01 14:54:31 by hamza            ###   ########.fr       */
+/*   Updated: 2023/10/09 14:39:09 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "zombie.hpp"
 
-Zombie* newZombie( std::string name )
+Zombie* newZombie( std::string name)
 {
     return (new Zombie(name));
 }
