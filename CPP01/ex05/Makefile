@@ -6,7 +6,7 @@
 #    By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 12:04:56 by hachahbo          #+#    #+#              #
-#    Updated: 2023/10/09 14:19:02 by hachahbo         ###   ########.fr        #
+#    Updated: 2023/10/09 19:45:25 by hachahbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(NAME) : $(OBJS) Harl.hpp
 clean:
 	@rm -rf $(OBJS)
 	
-fclean: clean
+fclean:
 	@rm -rf $(NAME)
 
 re : fclean all

@@ -6,7 +6,7 @@
 #    By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 15:29:08 by hamza             #+#    #+#              #
-#    Updated: 2023/10/09 14:18:39 by hachahbo         ###   ########.fr        #
+#    Updated: 2023/10/09 19:46:31 by hachahbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME) : $(OBJS)
 clean:
 	@rm -rf $(OBJS)
 	
-fclean: clean
+fclean:
 	@rm -rf $(NAME)
 
 re : fclean all

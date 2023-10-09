@@ -6,7 +6,7 @@
 #    By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 11:35:05 by hamza             #+#    #+#              #
-#    Updated: 2023/10/09 14:18:55 by hachahbo         ###   ########.fr        #
+#    Updated: 2023/10/09 19:46:44 by hachahbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(NAME) : $(OBJS) HumanA.hpp Weapon.hpp HumanB.hpp
 clean:
 	@rm -rf $(OBJS)
 	
-fclean: clean
+fclean:
 	@rm -rf $(NAME)
 
 re : fclean all

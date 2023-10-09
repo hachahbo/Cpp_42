@@ -6,7 +6,7 @@
 #    By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 14:56:34 by hamza             #+#    #+#              #
-#    Updated: 2023/10/09 14:18:01 by hachahbo         ###   ########.fr        #
+#    Updated: 2023/10/09 19:46:09 by hachahbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(NAME) : $(OBJS)  Zombie.hpp
 clean:
 	@rm -rf $(OBJS)
 	
-fclean: clean
+fclean: 
 	@rm -rf $(NAME)
 
 re : fclean all
