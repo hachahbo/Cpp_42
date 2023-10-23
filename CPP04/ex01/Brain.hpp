@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:54:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:23:27 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/21 18:54:15 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/22 20:08:46 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-void randomChump( std::string name )
+
+#include <iostream>
+
+class Brain
 {
-    Zombie z(name);
-    z.anounce();
-}
+    private:
+        std::string ideas[100];
+
+    public :
+        Brain();
+        Brain(Brain const & other);
+        Brain & operator=(Brain const & other);
+        ~Brain();
+};
+
+#endif

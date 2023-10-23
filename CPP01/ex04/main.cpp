@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 21:48:28 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/09 12:32:34 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/15 14:49:48 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int main(int ac ,char **av)
     std::string fileName = av[1];
     std::string toFind = av[2];
     std::string replace = av[3];
-    inFile.open(fileName, std::ios::in);
+    inFile.open(fileName, std::ios::in); //read
     if(!inFile)
     {
         std::cout << "file doesn't  exist or the permissions are denided" << std::endl;
         return (1); 
     }
-    std::ofstream outFile(fileName +  ".replace");
+    std::ofstream outFile(fileName +  ".replace"); //write
     if(inFile.is_open())
     {
         getline(inFile, text, '\0');

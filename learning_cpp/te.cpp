@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   te.cpp                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:54:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:23:27 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/10 12:37:34 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/10 12:41:03 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include <iostream>
 
-void randomChump( std::string name )
+int main()
 {
-    Zombie z(name);
-    z.anounce();
+    int a = 5;
+    int& ref = a;
+
+    ref++;
+    int b = 10;
+    std::cout << ref << std::endl;
 }

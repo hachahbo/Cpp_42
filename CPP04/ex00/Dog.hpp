@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:54:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:23:27 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/21 16:10:16 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/21 16:12:29 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-void randomChump( std::string name )
+#include "Animal.hpp"
+class Dog : public Animal
 {
-    Zombie z(name);
-    z.anounce();
-}
+    public:
+        Dog();
+        ~Dog();
+        void makeSound()  const;
+};
+#endif

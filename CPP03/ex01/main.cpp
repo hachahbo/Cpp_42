@@ -5,27 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 14:02:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:52:10 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/17 21:24:43 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/21 09:41:53 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
-#include <iostream>
-
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 int main()
 {
-    std::string name;
-    std::cout << " enter the zombie will be allocated in stack : ";
-    std::cin >> name;
-    randomChump(name);
+    {
+        ClapTrap obj("hamza");
 
-    std::cout << "------" << std::endl;
-    std::cout << "enter the 2nd zombie will be allocated in heap : ";
-    std::cin >> name;
-    Zombie *zomb2 = newZombie(name);
-    zomb2->anounce();
-    // Zombie *zomb = new Zombie();
-    // zomb->anounce();
-    delete zomb2;
+        obj.attack("staff");
+        obj.takeDamage(2);
+        obj.beRepaired(5);
+        ClapTrap obj1("test");
+    }
+    {
+        std::cout << "-------------------------\n";
+        ScavTrap obj("hamzah");
+        obj.attack("staff");
+        obj.takeDamage(2);
+        obj.beRepaired(5);
+        obj.guardGate();
+    }
 }

@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:54:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:23:27 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/21 16:09:32 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/21 16:09:41 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Cat.hpp"
 
-void randomChump( std::string name )
+Cat::Cat()
 {
-    Zombie z(name);
-    z.anounce();
+    std::cout << " Cat : default constructor is called " << std::endl;
+    setType("Cat");
+}
+
+void Cat::makeSound() const
+{
+    std::cout << "Meeeoo" << std::endl;
+}
+
+Cat::~Cat()
+{
+    std::cout << "Cat : destructor is called " << std::endl;
 }

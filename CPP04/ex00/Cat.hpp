@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:54:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:23:27 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/21 16:08:41 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/21 16:11:44 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-void randomChump( std::string name )
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-    Zombie z(name);
-    z.anounce();
-}
+    public:
+        Cat();
+        ~Cat();
+        void makeSound() const;
+};
+
+
+#endif

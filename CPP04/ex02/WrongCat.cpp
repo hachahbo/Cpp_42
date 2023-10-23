@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:54:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:23:27 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/22 15:37:27 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/22 15:54:24 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "WrongCat.hpp"
 
-void randomChump( std::string name )
+
+WrongCat::WrongCat()
 {
-    Zombie z(name);
-    z.anounce();
+    std::cout << " WrongCat : default constructor is called " << std::endl;
+    setType("WrongCat");
+}
+
+void WrongCat::makeSound() const
+{
+    std::cout << "Meeeoo" << std::endl;
+}
+
+WrongCat::~WrongCat()
+{
+    std::cout << "WrongCat : destructor is called " << std::endl;
 }

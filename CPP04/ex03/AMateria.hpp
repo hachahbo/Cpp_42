@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 14:03:13 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/11 18:56:29 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/23 15:51:40 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/23 19:05:01 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE__HPP
-#define ZOMBIE__HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
 #include <iostream>
-
-class Zombie
+#incldue "IChaa"
+class AMateria
 {
-    private :
-        std::string name;
-    public :
-        Zombie(void);
-        Zombie(std::string name);
-        void anounce(void);
+    protected:
+        std::string _type;
+    public:
+    
+    AMateria();
+    AMateria(std::string const & type);
+    AMateria(AMateria const & other);
+    ~AMateria();
+    std::string const & getType() const; //Returns the materia type
+    virtual AMateria* clone() const = 0;
+    virtual void use(ICharacter& target);
 };
-    void randomChump( std::string name );
-    Zombie* newZombie( std::string name );
+
 #endif

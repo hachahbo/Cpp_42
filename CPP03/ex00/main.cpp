@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:54:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:23:27 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/17 21:24:43 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/21 09:47:01 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "ClapTrap.hpp"
 
-void randomChump( std::string name )
+int main()
 {
-    Zombie z(name);
-    z.anounce();
+    ClapTrap obj("hamza");
+
+    obj.attack("staff");
+    obj.attack("staff");
+    obj.takeDamage(-10);
+    obj.beRepaired(5);
 }

@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:54:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:23:27 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/21 16:10:57 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/21 16:11:14 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Dog.hpp"
 
-void randomChump( std::string name )
+Dog::Dog()
 {
-    Zombie z(name);
-    z.anounce();
+    std::cout << " Dog : default constructor is called " << std::endl;
+    setType("Dog");
+}
+
+void Dog::makeSound() const 
+{
+    std::cout << "Wooffff" << std::endl;
+}
+
+Dog::~Dog()
+{
+    std::cout << "Dog : destructor is called " << std::endl;
 }

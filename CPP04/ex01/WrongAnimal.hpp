@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:55:15 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 17:51:35 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/22 15:35:23 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/22 15:39:47 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
- Zombie::Zombie(std::string name)
+#include <iostream>
+
+class WrongAnimal
 {
-    this->name = name;
+    protected:
+        std::string type;
+    public:
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal & other);
+        WrongAnimal & operator=(const WrongAnimal & other);
+        ~WrongAnimal();
+        std::string getType() const;
+        void setType(std::string _type);
+        void makeSound() const;
 };
 
- Zombie::Zombie(void) : name("default") 
- {
-    
- }
- 
-void    Zombie::anounce(void)
-{
-    std::cout << name << " : BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#endif

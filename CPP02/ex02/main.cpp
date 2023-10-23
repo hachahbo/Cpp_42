@@ -5,27 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 14:02:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:52:10 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/16 18:31:20 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/18 21:07:42 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
-#include <iostream>
+#include "Fixed.hpp"
 
-int main()
-{
-    std::string name;
-    std::cout << " enter the zombie will be allocated in stack : ";
-    std::cin >> name;
-    randomChump(name);
-
-    std::cout << "------" << std::endl;
-    std::cout << "enter the 2nd zombie will be allocated in heap : ";
-    std::cin >> name;
-    Zombie *zomb2 = newZombie(name);
-    zomb2->anounce();
-    // Zombie *zomb = new Zombie();
-    // zomb->anounce();
-    delete zomb2;
+int main( void ) {
+    Fixed a;
+    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    std::cout << a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    const Fixed& teye = Fixed::max( a, b );
+    std::cout << teye << std::endl;
+    return 0;
 }

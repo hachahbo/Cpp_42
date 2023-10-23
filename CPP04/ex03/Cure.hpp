@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:54:34 by hamza             #+#    #+#             */
-/*   Updated: 2023/10/10 12:23:27 by hachahbo         ###   ########.fr       */
+/*   Created: 2023/10/23 16:38:26 by hachahbo          #+#    #+#             */
+/*   Updated: 2023/10/23 17:11:02 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#ifndef CURE_HPP
+#define CURE_HPP
 
-void randomChump( std::string name )
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+
+class Cure : public AMateria
 {
-    Zombie z(name);
-    z.anounce();
-}
+    private:
+            
+    public:
+        Cure();
+        ~Cure();
+        Cure(Cure const & other);
+        Cure & operator=(Cure const & other);
+
+        AMateria* clone() const;
+        void use(ICharacter& target);
+
+};
+
+
+#endif
