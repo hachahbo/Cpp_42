@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 16:10:57 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/22 20:07:08 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:01:44 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ Dog::Dog(Dog const & other)
 Dog & Dog::operator=(Dog const & other)
 {
     std::cout << "Dog : Copy assignment operator called" << std::endl;
-    *this = other;
+    if (this != &other) {
+        *this = other;
+     }
     return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:40:58 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/23 19:13:06 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:24:22 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ICHARACTER_HPP
 
 #include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

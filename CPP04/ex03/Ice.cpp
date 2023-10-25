@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:32:45 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/23 17:24:44 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:09:42 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Ice::Ice()
 {   
-    this->_type = "Ice";
+    this->_type = "ice";
     std::cout << "Ice  Materia is created " << std::endl;
 }
 
@@ -29,14 +29,14 @@ Ice & Ice::operator=(Ice const & other)
 {
     
    std::cout << "Ice : Copy assignment operator called" << std::endl;
-    *this = other;
+    this->_type = other._type;
     return *this;
 }
 
 AMateria* Ice::clone() const
 {
-    std::cout << "Ice : the Materia  is colned" << std::endl;
-    return (AMateria*) this;
+    std::cout << "Ice : the Materia  is cloned" << std::endl;
+    return (new Ice(*this));
 }
 
 void Ice::use(ICharacter& target)

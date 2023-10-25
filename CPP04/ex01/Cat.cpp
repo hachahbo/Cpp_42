@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 16:09:32 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/22 20:16:51 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:01:32 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ Cat::Cat(Cat const & other)
 Cat & Cat::operator=(Cat const & other)
 {
     std::cout << "Cat : Copy assignment operator called" << std::endl;
-    *this = other;
+    if (this != &other) {
+        *this = other;
+     }
     return *this;
 }
 

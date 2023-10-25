@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 18:31:21 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/22 20:12:05 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:02:59 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ Brain::Brain(Brain const & other)
 Brain & Brain::operator=(Brain const & other)
 {
     std::cout << "Brain : Copy assignment operator called" << std::endl;
-    *this = other;
+     if (this != &other)
+    {
+        *this = other;
+    }
     return *this;
 }
 

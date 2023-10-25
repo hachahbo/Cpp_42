@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:33:55 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/23 17:11:56 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:09:55 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Cure::Cure()
 {   
-    this->_type = "Cure";
+    this->_type = "cure";
     std::cout << "Cure  Materia is created " << std::endl;
 }
 Cure::Cure(Cure const & other)
@@ -29,14 +29,14 @@ Cure & Cure::operator=(Cure const & other)
 {
     
    std::cout << "Cure : Copy assignment operator called" << std::endl;
-    *this = other;
+    this->_type = other._type;
     return *this;
 }
 
 AMateria* Cure::clone() const
 {
-    std::cout << "Cure : the Materia  is colned" << std::endl;
-    return (AMateria*) this;
+    std::cout << "Cure : the Materia  is cloned" << std::endl;
+    return (new Cure(*this));
 }
 
 void Cure::use(ICharacter& target)

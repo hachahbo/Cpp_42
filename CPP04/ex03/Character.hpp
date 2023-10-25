@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 19:07:42 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/23 19:17:27 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:28:43 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,48 +17,19 @@
 
 class Character : public ICharacter
 {
-      protected:
-        std::string name;
-        AMateria *_invotery[4];
+    private:
+      std::string name;
+      AMateria *_invotery[4];
     public:
-    virtual ~Character() {}
+    Character(std::string name);
+    Character();
+    Character(Character const & other);
+    Character & operator=(Character const & other);
+    ~Character();
     std::string const & getName() const ;
-    void equip(AMateria* m) const;
+    void equip(AMateria* m);
     void unequip(int idx);
     void use(int idx, ICharacter& target);
 };
 
-std::string const & Character::getName() const
-{
-    return (this->name);
-}
-
-void Character::equip(AMateria* m) const
-{
-    int i = 0;
-    while(i < 4)
-    {
-        if(this->_invotery[i] == NULL)
-        {
-            this->_invotery[i] = m;
-            std::cout << " the Materai" << m->getType() << " is equiped" << std::endl;
-            i++;
-            return ;
-        }
-    }
-    std::cout << "the inventory is full you can't add the Materia" << std::endl;    
-}
-
-
-void Character::unequip(int idx)
-{
-    int i;
-
-    // while( )
-}
-
-void Character::use(int idx, ICharacter& target)
-{
-    
-}
 #endif

@@ -6,7 +6,7 @@
 #    By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 16:00:28 by hachahbo          #+#    #+#              #
-#    Updated: 2023/10/22 15:54:51 by hachahbo         ###   ########.fr        #
+#    Updated: 2023/10/25 11:37:34 by hachahbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)	Animal.hpp Dog.hpp Cat.hpp  WrongAnimal.hpp WrongCat.cpp
 	c++ -std=c++98 -Wall -Wextra -Werror $(OBJS) -o $(NAME)
+
+%.o : %.cpp Animal.hpp Dog.hpp Cat.hpp  WrongAnimal.hpp WrongCat.cpp
+	c++ -std=c++98 -Werror -Wall -Werror -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:23:52 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/22 20:32:04 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:34:25 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "WrongCat.hpp"
 // void f()
 // {
-//     system("leaks Polymorphism");
+//     system("leaks Brain");
 // }  
 int main()
 {

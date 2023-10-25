@@ -5,26 +5,29 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/21 16:00:28 by hachahbo          #+#    #+#              #
-#    Updated: 2023/10/25 11:37:47 by hachahbo         ###   ########.fr        #
+#    Created: 2023/10/24 15:54:26 by hachahbo          #+#    #+#              #
+#    Updated: 2023/10/25 11:37:53 by hachahbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = Interface
 
-NAME = Abstract
-
-SRC =   main.cpp Animal.cpp Dog.cpp Cat.cpp \
-		WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC =   main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp \
+		 MateriaSource.cpp 
 		
 
 OBJS = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)	Animal.hpp Dog.hpp Cat.hpp  WrongAnimal.hpp WrongCat.cpp Brain.hpp
-	c++ -std=c++98 -Wall -Wextra -Werror $(OBJS) -o $(NAME)
 
-%.o : %.cpp Animal.hpp Dog.hpp Cat.hpp  WrongAnimal.hpp WrongCat.cpp Brain.hpp
+CXXXFLAGS = -std=c++98 -Wall -Wextra -Werror
+
+
+$(NAME) : $(OBJS)	AMateria.hpp ICharacter.hpp Character.hpp Cure.hpp Ice.hpp IMateriaSource.hpp  MateriaSource.hpp 
+	c++ $(CXXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o : %.cpp AMateria.hpp ICharacter.hpp Character.hpp Cure.hpp Ice.hpp IMateriaSource.hpp  MateriaSource.hpp 
 	c++ -std=c++98 -Werror -Wall -Werror -c $< -o $@
 
 clean:

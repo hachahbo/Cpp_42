@@ -6,7 +6,7 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 16:10:16 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/22 20:06:08 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:10:26 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
-// class Dog : public Animal
-// {
-//     public:
-//         Dog();
-//         ~Dog();
-//         void makeSound()  const;
-// };
 class Dog : public Animal
 {
     private:

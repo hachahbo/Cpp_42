@@ -6,48 +6,24 @@
 /*   By: hachahbo <hachahbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:40:30 by hachahbo          #+#    #+#             */
-/*   Updated: 2023/10/23 16:39:23 by hachahbo         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:18:09 by hachahbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "AMateria.hpp" 
+#include "ICharacter.hpp" 
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "IMateriaSource.hpp"
+#include "IMateriaSource.hpp" 
+#include "MateriaSource.hpp"
 
-// class IMateriaSource
+// void f()
 // {
-//     public:
-//     virtual ~IMateriaSource() {}
-//     virtual void learnMateria(AMateria*) = 0;
-//     virtual AMateria* createMateria(std::string const & type) = 0;
-// };
-
-// class Materuasource : public IMateriaSource
-// {
-//     public:
-//         Materuasource();
-        
-//         void learnMateria(AMateria*);
-//         Void AMateria* createMateria(std::string const &type); 
-// };
-
-
-class AMateria
-{
-    protected:
-        std::string _type;
-    public:
-    
-    AMateria(std::string const & type);
-    AMateria(AMateria const & other);
-    std::string const & getType() const; //Returns the materia type
-    virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
-};
-
-
-
-
-
-
+//     system("leaks Interface");
+// }
 
 int main()
 {
@@ -62,15 +38,15 @@ int main()
     me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
+    me->unequip(0);
 
     ICharacter* bob = new Character("bob");
-
+    // atexit(f);
     me->use(0, *bob);
     me->use(1, *bob);
 
     delete bob;
     delete me;
     delete src;
-
     return 0;
 }
