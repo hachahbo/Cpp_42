@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:55:57 by hamza             #+#    #+#             */
-/*   Updated: 2023/11/18 13:45:33 by hamza            ###   ########.fr       */
+/*   Updated: 2023/11/18 19:51:24 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Form::Form(std::string _name, const int _gradeSign) : name(_name) , gradeSign(_gradeSign) , exeSign(0)
 {
+    std::cout << "Form : constructor is called" << std::endl;
     if(this->gradeSign < 1)
     {
         throw Form::GradeTooLowException();
@@ -34,7 +35,7 @@ Form & Form::operator=(const Form &other)
 }
 Form::~Form()
 {
-    std::cout << "From destructed is called" << std::endl;
+    std::cout << "Form destructed is called" << std::endl;
 }
 
 std::string Form::getName() const
@@ -59,7 +60,7 @@ void Form::setName(std::string _name)
     this->name = _name;
 }
     
-void Form::besigned(Bureaucrat bureaucrat)
+void Form::besigned(const Bureaucrat &bureaucrat)
 {
     if(bureaucrat.getGrade() > gradeSign)
         throw Form::GradeTooHighException();
@@ -70,7 +71,7 @@ std::ostream & operator<< (std::ostream & o, Form const & Value)
 {
     std::cout << "Form infos: " << std::endl;
     std::cout << "Name : " << Value.getName() << std::endl;
-    std::cout << "GradeSign" << Value.getGradeSign() << std::endl;
-    std::cout << "ExeSign" << Value.getExeSign() << std::endl;
+    std::cout << "GradeSign : " << Value.getGradeSign() << std::endl;
+    std::cout << "ExeSign : " << Value.getExeSign() << std::endl;
     return o;
 }

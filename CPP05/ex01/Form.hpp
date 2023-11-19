@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:51:00 by hamza             #+#    #+#             */
-/*   Updated: 2023/11/18 11:46:25 by hamza            ###   ########.fr       */
+/*   Updated: 2023/11/18 19:38:07 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Form
     
     void setName(std::string _name);
     
-    void besigned(Bureaucrat bureaucrat);
+    void besigned(const Bureaucrat &bureaucrat);
     std::string getName() const;
     bool getSigned() const;
     int getGradeSign() const;
