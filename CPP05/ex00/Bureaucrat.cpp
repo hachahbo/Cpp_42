@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 16:30:11 by hamza             #+#    #+#             */
-/*   Updated: 2023/11/17 15:28:54 by hamza            ###   ########.fr       */
+/*   Updated: 2023/11/22 12:19:25 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
     std::cout << "Bureaucrat constructor" << std::endl;
     this->name = name;
     this->grade = grade;
+     if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
 }
 
 
@@ -62,13 +66,13 @@ void    Bureaucrat::setGrade(int _grade)
 void    Bureaucrat::incrementGrade()
 {
     if(grade + 1 > 150)
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
     this->grade += 1;
 }
 void    Bureaucrat::decrementGrade()
 {
     if(grade - 1 < 1)
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooHighException();
     this->grade -= 1;
 }
 

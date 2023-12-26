@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:41:37 by hamza             #+#    #+#             */
-/*   Updated: 2023/11/22 12:22:56 by hamza            ###   ########.fr       */
+/*   Updated: 2023/11/22 17:21:15 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,22 +58,35 @@
 
 // }
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPadronForm.hpp"
 
 int main( void )
 {
-    try {
-        Bureaucrat bureaucrat("hamza", 250);
+    try
+    {  
+        std::cout <<"------- ShrubberyCreationForm -----------" << std::endl;
+        Bureaucrat bureaucrat("hamza", 5);
+        // ShrubberyCreationForm form("ShrubberyCreationForm");
+        // RobotomyRequestForm form1("RobotomyRequestForm");
+        PresidentialPadronForm form2("PresidentialPadronForm");
+        
+        // bureaucrat.signForm(form);
+        // bureaucrat.executeForm(form);
+        // std::cout <<std::endl << "------- RobotomyRequestForm-----------" << std::endl;
 
-        std::cout << bureaucrat << std::endl;
-        // for(int i = 0; i < 1; i--)
-            // bureaucrat.decrementGrade();     
-        // bureaucrat.decrementGrade();
-    }
-    catch (Bureaucrat::GradeTooHighException &e) {
+        // bureaucrat.signForm(form1);
+        // bureaucrat.executeForm(form1);
+        // bureaucrat.executeForm(form1);
+        // bureaucrat.executeForm(form1);
+        // bureaucrat.executeForm(form1);
+        std::cout <<std::endl << "------- PresidentialPadronForm-----------" << std::endl;
+        bureaucrat.signForm(form2);
+        bureaucrat.executeForm(form2);
+    } catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
-    catch (Bureaucrat::GradeTooLowException &e) {
-        std::cout << e.what() << std::endl;
-    }
-    // return EXIT_SUCCESS;
+        
 }

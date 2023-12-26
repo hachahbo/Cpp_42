@@ -6,7 +6,7 @@
 /*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:41:37 by hamza             #+#    #+#             */
-/*   Updated: 2023/11/19 14:00:53 by hamza            ###   ########.fr       */
+/*   Updated: 2023/11/22 12:27:45 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,12 @@
 int main( void )
 {
     try {
-        Bureaucrat bureaucrat("hamza", 20);
-        Form obj("FP", 10);
+        Bureaucrat bureaucrat("hamza",2);
+        Form obj("F-B", 5);
         
             bureaucrat.signForm(obj);
         std::cout << obj << std::endl;
-        // for(int i = 0; i < 1; i--)
-            // bureaucrat.decrementGrade();     
-        // bureaucrat.decrementGrade();
+        
     } catch (Form::GradeTooHighException &e) {
         std::cout << e.what() << std::endl;
     }

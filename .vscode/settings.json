@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "iostream": "cpp",
+        "iosfwd": "cpp",
         "__bit_reference": "cpp",
         "__bits": "cpp",
         "__config": "cpp",
@@ -40,7 +40,7 @@
         "initializer_list": "cpp",
         "iomanip": "cpp",
         "ios": "cpp",
-        "iosfwd": "cpp",
+        "iostream": "cpp",
         "istream": "cpp",
         "limits": "cpp",
         "locale": "cpp",
@@ -64,7 +64,12 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "filesystem": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "disabled"
+        "filesystem": "cpp",
+        "__tree": "cpp",
+        "set": "cpp",
+        "span": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "queue": "cpp"
+    }
 }
